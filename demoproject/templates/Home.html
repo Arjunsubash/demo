@@ -1,0 +1,29 @@
+<html>
+    <title>Team</title>
+    <body>
+    <form method="POST" id="frm1">
+    {% csrf_token %}
+        <h1 align="center">Register  </h1>
+        <a href="/teams/form_logout">logout</a>
+        <table align="center">
+            <tr><td>Name</td><td>:</td><td>{{home_form.name}}</td></tr>
+            <tr><td>Age</td><td>:</td><td>{{home_form.age}}</td></tr>
+            <tr><td>Number</td><td>:</td><td>{{home_form.phone_number}}</td></tr>
+            </table>
+            <div align="center"><input type="submit" Value="Register" btname="form1"></div>
+            <table align="center">
+                <tr><th>Name</th><th>Age</th><th>Phone number</th></tr>
+                <tr>{% for i in form_data %}<td>{{i.name}}</td><td>{{i.age}}</td><td>{{i.phone_number}}</td></tr>{% endfor %} 
+            </table>
+            </form>   
+            <form method="POST" name="form2">
+            {% csrf_token %}
+            <table align="center">
+            <tr><td>Username</td><td>:</td><td>{{sign_form.username}}</td></tr>
+            <tr><td>Password</td><td>:</td><td>{{sign_form.password}}</td></tr>
+            </table>
+            <div align="center"><input type="submit" Value="Register" btname="form2"></div>
+            </form>
+         
+        </body>
+</html>
